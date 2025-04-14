@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./.env:/app/.env
+      - ./downloaded_audio:/app/downloaded_audio:rw
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+    # 创建目录
+    command: >
+      bash -c "
+        mkdir -p /app/downloaded_audio &&
+        uvicorn main:app --host 0.0.0.0 --port 8000
+      "
+    # 如果你想保留下载的音频文件，可以添加以下卷
+    # volumes:
+    #   - ./downloaded_audio:/app/downloaded_audio 

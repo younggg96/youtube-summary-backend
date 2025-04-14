@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+openai>=1.0.0
+git+https://github.com/openai/whisper.git
+python-dotenv
+yt-dlp
+numpy
+pydantic
+ffmpeg-python

@@ -13,12 +13,16 @@ RUN apt-get update && apt-get install -y \
 # 复制项目文件
 COPY requirements.txt .
 COPY main.py .
+COPY alembic.ini .
 COPY app/ app/
+
+# 创建migrations目录
+RUN mkdir -p migrations
 
 # 安装 Python 依赖
 RUN pip install --no-cache-dir -r requirements.txt
 
-# 创建下载目录并设置权限
+# 创建下载目录和SQLite数据库目录
 RUN mkdir -p /app/downloaded_audio && \
     chmod 777 /app/downloaded_audio
 

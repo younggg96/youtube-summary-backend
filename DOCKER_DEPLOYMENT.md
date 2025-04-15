@@ -15,8 +15,7 @@
 创建 `.env` 文件并添加你的 OpenAI API 密钥：
 
 ```bash
-cp .env.example .env  # 如果有示例环境文件
-# 或者手动创建
+# 手动创建
 echo "OPENAI_API_KEY=你的API密钥" > .env
 ```
 

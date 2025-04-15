@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install -y \
 
 # 复制项目文件
 COPY requirements.txt .
-COPY .env.example .env
+COPY .env .
 COPY main.py .
 COPY app/ app/
 

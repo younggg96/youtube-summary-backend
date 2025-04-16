@@ -29,4 +29,8 @@ RUN mkdir -p /app/downloaded_audio && \
 # 暴露端口
 EXPOSE 8000
 
-# 启动命令由 docker-compose.yml 提供 
+# 添加启动命令
+ENTRYPOINT ["uvicorn", "main:app", "--host", "0.0.0.0"]
+CMD ["--port", "8000"]
+
+# 注释：启动命令也可由 docker-compose.yml 提供 

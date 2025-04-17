@@ -63,6 +63,7 @@ def download_with_ytdlp(url: str, output_dir: str = None) -> str:
             'outtmpl': os.path.join(output_dir, '%(id)s.%(ext)s'),
             'quiet': True,
             'no_warnings': True,
+            'cookiesfrombrowser': ('chrome',),
         }
         
         # 下载音频
